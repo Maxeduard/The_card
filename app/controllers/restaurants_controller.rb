@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
 
   def show
-    @restaurant = Restaurant.all
+    @restaurants = Restaurant.all
   end
 end
