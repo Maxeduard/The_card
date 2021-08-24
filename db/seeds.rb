@@ -9,18 +9,23 @@ puts "Clearing database..."
 
 Restaurant.destroy_all
 
-user = User.create(email: "test@test.com", password: "123123")
-
 puts "Building database..."
 
-restaurant_two = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch", user: user }
-restaurant_one = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch", user: user }
-restaurant_three = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch", user: user }
-restaurant_four = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch", user: user }
-restaurant_five = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch", user: user }
+restaurant = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch" }
 
-[restaurant_one, restaurant_two, restaurant_three, restaurant_four, restaurant_five].each do |restaurant|
-  Restaurant.create!(restaurant)
+restaurant_one = Restaurant.create!(restaurant)
+
+menu_one = { name: "Schnitzel", category: "mains", price: 10, description: "your typical Wiener Schnitzel" }
+menu_two = { name: "Crispy duck", category: "mains", price: 12, description: "Best duck in town" }
+menu_three = { name: "Beer", category: "drinks", price: 4, description: "Augustiner" }
+menu_four = { name: "Coca Cola", category: "drinks", price: 3, description: "cola" }
+menu_five = { name: "Schnaps", category: "drinks", price: 3, description: "Kirschwasser" }
+
+[menu_one, menu_two, menu_three, menu_four, menu_five].each do |menu|
+  menu_item = MenuItem.new(menu)
+  menu_item.restaurant = restaurant_one
+  menu_item.save
 end
+
 
 puts "Finished"
