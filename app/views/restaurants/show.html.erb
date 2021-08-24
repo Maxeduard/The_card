@@ -1,14 +1,5 @@
-<div class="container">
-  <h1>Our Restaurants</h1>
-  <div class="cards">
-    <% @restaurants.each do |restaurant| %>
-      <%= link_to restaurant_path(restaurant) do %>
-        <div class="card">
-          <p> Name <%= restaurant.name %> </p>
-          <p> Address <%= restaurant.adrress%> </p>
-          <p> Description <%= restaurant.description%> </p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+<div class="container my-5">
+  <h1><%= @restaurant.name %></h1>
+  <p>Address: <%= @restaurant.address %></p>
+  <%= @svg.html_safe %>
 </div>
