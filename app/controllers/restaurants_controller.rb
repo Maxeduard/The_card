@@ -16,7 +16,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    base_url = 'https://the-card.herokuapp.com/restaurant/'    # 'www.thecardapp.biz/restaurant/'
+    base_url = 'https://the-card.herokuapp.com/restaurants/'    # 'www.thecardapp.biz/restaurant/'
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.qr_code = "#{base_url}#{@restaurant.id}"
     if @restaurant.save
