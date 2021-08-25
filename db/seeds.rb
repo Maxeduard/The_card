@@ -11,7 +11,7 @@ Restaurant.destroy_all
 
 puts "Building database..."
 
-restaurant = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch" }
+restaurant = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch", qr_code: "https://the-card.herokuapp.com/restaurants/1" }
 
 restaurant_one = Restaurant.create!(restaurant)
 
