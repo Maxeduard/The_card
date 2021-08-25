@@ -1,0 +1,5 @@
+<%= simple_form_for [@order, @order_item] do |f| %>
+  <%= f.input :quantity %>
+  <%= f.input :menu_item_id, as: :hidden %>
+  <%= f.submit "Create order", class: "btn btn-primary my-2"%>
+<% end %>
