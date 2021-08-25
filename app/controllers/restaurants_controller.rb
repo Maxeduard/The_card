@@ -2,6 +2,8 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @drinks = @restaurant.menu_items.where(category: "drinks")
+    @mains = @restaurant.menu_items.where(category: "mains")
 
     @qr_code = RQRCode::QRCode.new(@restaurant.qr_code)
     @svg = @qr_code.as_svg(
@@ -31,7 +33,5 @@ class RestaurantsController < ApplicationController
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :description)
-
   end
-
 end

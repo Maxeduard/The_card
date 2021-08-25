@@ -6,17 +6,26 @@
 </div>
 
 <div class="container">
-  <h1>Restaurant</h1>
-  <p>menu</p>
+  <h1><%= @restaurant.name %></h1>
+  <h3>Our Menu</h3>
 
 <div class="cards">
-    <% @restaurant.menu_items.each do |menu_item| %>
-      <div class="card">
-        <p> Name: <%= menu_item.name %> </p>
-        <p> Category: <%= menu_item.category %> </p>
-        <p> price: <%= menu_item.price%> </p>
-        <p> Description: <%= menu_item.description%> </p>
-      </div>
-    <% end %>
-  </div>
+  <h4>Drinks</h4>
+  <% @drinks.each do |menu_item| %>
+    <div class="card">
+      <p> Name: <%= menu_item.name %> </p>
+      <p> price: <%= menu_item.price%> </p>
+      <p> Description: <%= menu_item.description%> </p>
+    </div>
+  <% end %>
 
+<div class="cards">
+  <h4>Mains</h4>
+  <% @mains.each do |menu_item| %>
+    <div class="card">
+      <p> Name: <%= menu_item.name %> </p>
+      <p> price: <%= menu_item.price%> </p>
+      <p> Description: <%= menu_item.description%> </p>
+    </div>
+  <% end %>
+</div>
