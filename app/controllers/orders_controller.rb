@@ -31,3 +31,5 @@ class OrdersController < ApplicationController
     params.require(:order).permit(:status, :total, :user_id)
   end
 end
+
+#@order = Order.find us
