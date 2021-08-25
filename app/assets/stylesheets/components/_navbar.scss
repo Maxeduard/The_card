@@ -1,6 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(18, 121, 72);
+}
+
+.navbar-brand h3 {
+  font-family: 'Gloria Hallelujah';
+  color: white;
+  padding: 3px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +15,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-toggler {
+  border: none;
 }
