@@ -19,6 +19,7 @@
     </div>
   <% end %>
 
+
 <div class="cards">
   <h4>Mains</h4>
   <% @mains.each do |menu_item| %>
@@ -29,3 +30,6 @@
     </div>
   <% end %>
 </div>
+
+<%= link_to "My Orders", restaurant_path, class: "btn btn-primary"%>
+<%= link_to "Payment", restaurant_path, class: "btn btn-primary"%>
