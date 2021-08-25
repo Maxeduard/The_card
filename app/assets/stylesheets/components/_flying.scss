@@ -1,3 +1,35 @@
+.fix {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+}
+
 .flying {
-  // background-color:red;
+  background-color: rgb(255, 255, 255);
+  height: 80px;
+  border-radius: 40px;
+  margin: 0px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.order {
+  background-color: red;
+}
+
+.add {
+  background-color: rgba(18, 121, 72, 1);
+  border: solid 10px rgb(248, 248, 248);
+  border-radius: 50%;
+  position: absolute;
+  width: 91px;
+  height: 91px;
+  text-align: center;
+  margin-top: -36px;
+}
+
+.pay {
+  background-color: palevioletred;
 }
