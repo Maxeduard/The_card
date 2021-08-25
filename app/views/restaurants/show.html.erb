@@ -13,23 +13,23 @@
   <h4>Drinks</h4>
   <% @drinks.each do |menu_item| %>
     <div class="card">
-      <p> Name: <%= menu_item.name %> </p>
-      <p> price: <%= menu_item.price%> </p>
+      <p> <%= menu_item.name %> </p>
+      <p> <%= menu_item.price%> €</p>
       <p> Description: <%= menu_item.description%> </p>
     </div>
   <% end %>
 
 
-<div class="cards">
   <h4>Mains</h4>
   <% @mains.each do |menu_item| %>
     <div class="card">
-      <p> Name: <%= menu_item.name %> </p>
-      <p> price: <%= menu_item.price%> </p>
+      <p> <%= menu_item.name %> </p>
+      <p> <%= menu_item.price%> €</p>
       <p> Description: <%= menu_item.description%> </p>
     </div>
   <% end %>
+  <div class="link">
+    <%= link_to "My Orders", restaurant_path, class: "btn btn-primary"%>
+    <%= link_to "Payment", restaurant_path, class: "btn btn-primary"%>
+  </div>
 </div>
-
-<%= link_to "My Orders", restaurant_path, class: "btn btn-primary"%>
-<%= link_to "Payment", restaurant_path, class: "btn btn-primary"%>
