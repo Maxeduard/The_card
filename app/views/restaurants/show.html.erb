@@ -5,6 +5,11 @@
       <p> <%= menu_item.name %> </p>
       <p> <%= menu_item.price%> €</p>
       <p> Description: <%= menu_item.description%> </p>
+      <%= simple_form_for([@order, @order_item]) do |f| %>
+        <%= f.input :quantity %>
+        <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
+        <%= f.submit "Add to order", class: "btn btn-primary my-2"%>
+      <% end %>
     </div>
   <% end %>
 
