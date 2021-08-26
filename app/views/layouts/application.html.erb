@@ -13,12 +13,12 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/top' %>
-    <%= render 'shared/swipebar' %>
+    <%= render 'shared/top' if current_user %>
+    <%= render 'shared/swipebar' if current_user %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
 
-    <%= render 'shared/flying' %>
+    <%= render 'shared/flying' if current_user %>
   </body>
 </html>

@@ -11,15 +11,15 @@ Restaurant.destroy_all
 
 puts "Building database..."
 
-restaurant = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch"}
+restaurant = { name: "Balan Deli", address: "Neu Balan", description: "good for lunch", qr_code: "https://thecardapp.biz/restaurants/1" }
 
 restaurant_one = Restaurant.create!(restaurant)
 
-menu_one = { name: "Schnitzel", category: "mains", price: 10, description: "your typical Wiener Schnitzel" }
-menu_two = { name: "Crispy duck", category: "mains", price: 12, description: "Best duck in town" }
-menu_three = { name: "Beer", category: "drinks", price: 4, description: "Augustiner" }
-menu_four = { name: "Coca Cola", category: "drinks", price: 3, description: "cola" }
-menu_five = { name: "Schnaps", category: "drinks", price: 3, description: "Kirschwasser" }
+menu_one = { name: "Schnitzel", category: "mains", price: 10, description: "your typical Wiener Schnitzel", image_url: "https://images.unsplash.com/photo-1599921841143-819065a55cc6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2378&q=80" }
+menu_two = { name: "Crispy duck", category: "mains", price: 12, description: "Best duck in town", image_url: "https://images.unsplash.com/photo-1582391123232-6130296f1fcd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" }
+menu_three = { name: "Beer", category: "drinks", price: 4, description: "Augustiner", image_url: "https://images.unsplash.com/photo-1608270586620-248524c67de9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" }
+menu_four = { name: "Coca Cola", category: "drinks", price: 3, description: "cola", image_url: "https://images.unsplash.com/photo-1624552184280-9e9631bbeee9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=933&q=80" }
+menu_five = { name: "Schnaps", category: "drinks", price: 3, description: "Kirschwasser", image_url: "https://images.unsplash.com/photo-1525081265669-4c1bac7ccd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" }
 
 [menu_one, menu_two, menu_three, menu_four, menu_five].each do |menu|
   menu_item = MenuItem.new(menu)
