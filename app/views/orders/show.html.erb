@@ -1,7 +1,9 @@
+<%= render 'shared/top' if current_user %>
+
 <div class="container my-5">
   <h1>Your Cart</h1>
   <div class="cards">
-      <% total = 0 %>
+    <% total = 0 %>
     <% @order_items.each do |item| %>
       <div class="card">
         <p> <%= item.menu_item.name %> </p>
@@ -14,10 +16,12 @@
     <% end %>
   </div>
 </div>
+
 <div class="container my-5">
   <h1>Your Order</h1>
-    <div class="cards">
-      <p>Total: <%= total%>€</p>
-      </div>
-    </div>
+  <div class="cards">
+    <p>Total: <%= total%>€</p>
+  </div>
 </div>
+
+<%= render 'shared/flying' if current_user %>
