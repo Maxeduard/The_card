@@ -1,29 +1,43 @@
 <div class="cards">
-  <h4 id="drinks">Drinks</h4>
-  <% @drinks.each do |menu_item| %>
-    <div class="card">
-      <p> <%= menu_item.name %> </p>
-      <p> <%= menu_item.price%> €</p>
-      <p> Description: <%= menu_item.description%> </p>
-      <%= simple_form_for([@order, @order_item]) do |f| %>
-        <%= f.input :quantity %>
-        <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
-        <%= f.submit "Add to order", class: "btn btn-primary my-2"%>
-      <% end %>
-    </div>
-  <% end %>
+  <div class="category_m">
+    <h4 id="drinks">Drinks</h4>
+    <% @drinks.each do |menu_item| %>
+      <div class="meal">
+        <a href="#">
+          <div class="plus">
+            <p>+</p>
+          </div>
+        </a>
+        <div class="name">
+          <p> <%= menu_item.name %> </p>
+          <p> <%= menu_item.price%> €</p>
+          <p> Description: <%= menu_item.description%> </p>
+          <%= simple_form_for([@order, @order_item]) do |f| %>
+            <%= f.input :quantity %>
+            <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
+            <%= f.submit "Add to order", class: "btn btn-primary my-2"%>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
 
-  <h4 id="mains">Mains</h4>
-  <% @mains.each do |menu_item| %>
-    <div class="card">
-      <p> <%= menu_item.name %> </p>
-      <p> <%= menu_item.price%> €</p>
-      <p> Description: <%= menu_item.description%> </p>
-    </div>
-  <% end %>
-  <div class="link">
-    <%= link_to "My Orders", restaurant_path, class: "btn btn-primary"%>
-    <%= link_to "Payment", restaurant_path, class: "btn btn-primary"%>
+  <div class="category_m">
+    <h4 id="mains">Mains</h4>
+    <% @mains.each do |menu_item| %>
+      <div class="meal">
+        <a href="#">
+          <div class="plus">
+            <p>+</p>
+          </div>
+        </a>
+        <div class="name">
+          <p> <%= menu_item.name %> </p>
+          <p> <%= menu_item.price%> €</p>
+          <p> Description: <%= menu_item.description%> </p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
