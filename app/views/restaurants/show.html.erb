@@ -1,9 +1,8 @@
+<%= render 'shared/top' if current_user %>
+<%= render 'shared/swipebar' if current_user %>
+
 <div class="cards">
-
-
   <h4 id="drinks">Drinks</h4>
-
-
   <% @drinks.each do |menu_item| %>
     <div class="card">
       <%= image_tag menu_item.image_url %>
@@ -38,5 +37,6 @@
     <%= link_to "My Orders", restaurant_path, class: "btn btn-primary"%>
     <%= link_to "Payment", restaurant_path, class: "btn btn-primary"%>
   </div>
-
 </div>
+
+<%= render 'shared/flying' if current_user %>
