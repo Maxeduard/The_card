@@ -2,7 +2,8 @@
   background-color: white;
   margin-top: -30px;
   display: flex;
-  justify-content: space-around;
+  overflow-x: scroll;
+  width: 100%;
   height: 46px;
   position: sticky;
   top: 0;
