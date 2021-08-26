@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @restaurant = Restaurant.find(params[:id])
     @order = Order.find_by(params[:order_id])
   end
 
@@ -31,5 +32,3 @@ class OrdersController < ApplicationController
     params.require(:order).permit(:status, :total, :user_id)
   end
 end
-
-#@order = Order.find us
