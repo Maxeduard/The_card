@@ -1,11 +1,8 @@
 class OrdersController < ApplicationController
-
-  def new
-    @order = Order.new
-  end
-
   def show
-    @order = Order.find(params[:id])
+    @order_items = OrderItem.all
+    @restaurant = Restaurant.find(params[:id])
+    @order = Order.find_by(params[:order_id])
   end
 
   def update
@@ -13,15 +10,6 @@ class OrdersController < ApplicationController
       @order.save
     else
       @order = Order.new
-    end
-  end
-
-  def create
-    @order = Order.new(order_params)
-    if @order.save
-      redirect_to order_path(@order)
-    else
-      render :new
     end
   end
 
