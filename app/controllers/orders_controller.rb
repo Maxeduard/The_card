@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find_by(params[:order_id])
   end
 
   def update
@@ -17,3 +17,5 @@ class OrdersController < ApplicationController
     params.require(:order).permit(:status, :total, :user_id)
   end
 end
+
+#@order = Order.find us

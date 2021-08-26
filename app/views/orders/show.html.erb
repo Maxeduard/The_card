@@ -1,6 +1,22 @@
-<h1>Shows order</h1>
-
-  <div class="card">
+<div class="container my-5">
+  <h1>Your Cart</h1>
+  <div class="cards">
+    <div class="card">
       <p> Order Number: <%= @order.id %> </p>
-
+      <p> Item <%= @order_items %> </p>
+      <button class="btn btn-primary ">Delete</button>
+      <p> Item: <%= @order_items%> </p>
+      <button class="btn btn-primary">Delete</button>
+    </div>
   </div>
+</div>
+<div class="container my-5">
+  <h1>Your Order</h1>
+    <div class="cards">
+      <p> Status: <%= @order %> </p>
+      <p> Total: <%= @order_items%> </p>
+      <div class="link">
+        <%= link_to "Payment", order_path, class: "btn btn-primary"%>
+      </div>
+    </div>
+</div>

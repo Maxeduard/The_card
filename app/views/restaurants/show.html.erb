@@ -1,14 +1,3 @@
-
-<div class="container my-5">
-  <h1><%= @restaurant.name %></h1>
-  <p>Address: <%= @restaurant.address %></p>
-  <%= @svg.html_safe %>
-</div>
-
-<div class="container">
-  <h1><%= @restaurant.name %></h1>
-  <h3>Our Menu</h3>
-
 <div class="cards">
   <h4>Drinks</h4>
   <% @drinks.each do |menu_item| %>
