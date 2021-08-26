@@ -1,7 +1,15 @@
 <div class="fix">
   <div class="flying">
-    <h1 class="order">🛒</h1>
+    <%= link_to restaurant_path do%>
+      <h1 class="order">🛒</h1>
+    <% end %>
+
+    <%= link_to restaurant_path do%>
     <h1 class="add">+</h1>
+    <% end %>
+
+    <%= link_to restaurant_path do%>
     <h1 class="pay">💳</h1>
+    <% end %>
   </div>
 </div>
