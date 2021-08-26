@@ -1,6 +1,9 @@
 <div class="cards">
 
+
   <h4 id="drinks">Drinks</h4>
+
+
   <% @drinks.each do |menu_item| %>
     <div class="card">
       <%= image_tag menu_item.image_url %>
@@ -16,7 +19,7 @@
   <% end %>
 
 
-  <h4 id="mains">Mains</h4>
+  <h4>Mains</h4>
   <% @mains.each do |menu_item| %>
     <div class="card">
       <%= image_tag menu_item.image_url %>
