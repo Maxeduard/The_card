@@ -1,10 +1,7 @@
 class OrdersController < ApplicationController
-
-  def new
-    @order = Order.new
-  end
-
   def show
+    @order_items = OrderItem.all
+    @restaurant = Restaurant.find(params[:id])
     @order = Order.find_by(params[:order_id])
   end
 
@@ -16,20 +13,9 @@ class OrdersController < ApplicationController
     end
   end
 
-  def create
-    @order = Order.new(order_params)
-    if @order.save
-      redirect_to order_path(@order)
-    else
-      render :new
-    end
-  end
-
   private
 
   def order_params
     params.require(:order).permit(:status, :total, :user_id)
   end
 end
-
-#@order = Order.find us
