@@ -1,5 +1,5 @@
 <div class="cards">
-  <h4>Drinks</h4>
+  <h4 id="drinks">Drinks</h4>
   <% @drinks.each do |menu_item| %>
     <div class="card">
       <p> <%= menu_item.name %> </p>
@@ -14,7 +14,7 @@
   <% end %>
 
 
-  <h4>Mains</h4>
+  <h4 id="mains">Mains</h4>
   <% @mains.each do |menu_item| %>
     <div class="card">
       <p> <%= menu_item.name %> </p>
