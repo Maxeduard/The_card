@@ -4,6 +4,9 @@
   display: flex;
   justify-content: space-around;
   height: 46px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
