@@ -1,3 +1,6 @@
+<%= render 'shared/top' if current_user %>
+<%= render 'shared/swipebar' if current_user %>
+
 <div class="cards">
   <div class="category_m">
     <h4 id="drinks">Drinks</h4>
@@ -9,6 +12,7 @@
           </div>
         </a>
         <div class="name">
+          <%= image_tag menu_item.image_url %>
           <p> <%= menu_item.name %> </p>
           <p> <%= menu_item.price%> €</p>
           <p> Description: <%= menu_item.description%> </p>
@@ -33,11 +37,15 @@
           </div>
         </a>
         <div class="name">
+          <%= image_tag menu_item.image_url %>
           <p> <%= menu_item.name %> </p>
           <p> <%= menu_item.price%> €</p>
           <p> Description: <%= menu_item.description%> </p>
         </div>
       </div>
     <% end %>
+
   </div>
 </div>
+
+<%= render 'shared/flying' if current_user %>
