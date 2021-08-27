@@ -53,6 +53,8 @@
 }
 
 .plus {
+  display: flex;
+  justify-content: center;
   background-color: rgba(229, 249, 194, 1);
   color: rgba(18, 121, 72, 1);
   width: 48px;
@@ -65,6 +67,11 @@
   left: 5px;
   font-size: 56px;
   font-weight: 900;
+}
+
+.plus[type=submit] {
+  color: red;
+
 }
 
 .link {
