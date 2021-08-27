@@ -25,18 +25,19 @@
             </div>
           </div>
 
-          <div class="desc_qua">
-            <div class="descrpiton">
-              <p> Description: <%= menu_item.description%> </p>
-            </div>
+          <div class="descrpiton">
+            <%= link_to restaurant_path do%>
+              <p>Description</p>
+              <%# <p><%= menu_item.description%>
+            <% end %>
+          </div>
 
-            <div class="quantity">
-              <%= simple_form_for([@order, @order_item]) do |f| %>
+          <div class="quantity">
+            <%= simple_form_for([@order, @order_item]) do |f| %>
                 <%= f.input :quantity %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.submit "+", class: "plus"%>
-              <% end %>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
