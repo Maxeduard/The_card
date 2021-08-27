@@ -4,16 +4,18 @@
   <h1>Your Cart</h1>
   <div class="cards">
     <% total = 0 %>
-    <% @order_items.each do |item| %>
-      <div class="card">
-        <p> <%= item.menu_item.name %> </p>
-        <p> <%= item.quantity %> </p>
-        <p> <%= amount = item.menu_item.price * item.quantity%> €</p>
-        <p> Description: <%= item.menu_item.description %> </p>
-        <button class="btn btn-primary ">Delete</button>
-        <% total = total + amount %>
-      </div>
-    <% end %>
+
+      <% @order_items.each do |item| %>
+        <div class="card">
+          <p> <%= item.menu_item.name %> </p>
+          <p> <%= item.quantity %> </p>
+          <p> <%= amount = item.menu_item.price * item.quantity%> €</p>
+          <p> Description: <%= item.menu_item.description %> </p>
+          <button class="btn btn-primary ">Delete</button>
+          <% total = total + amount %>
+        </div>
+      <% end %>
+
   </div>
 </div>
 

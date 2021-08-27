@@ -15,7 +15,7 @@
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Currrent Order", "#", class: "nav-link" %>
+          <%= link_to "Currrent Order", order_path(current_user.current_order), class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Shopping Bag", "#", class: "nav-link" %>
