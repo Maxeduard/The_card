@@ -34,7 +34,7 @@
 
           <div class="quantity">
             <%= simple_form_for([@order, @order_item]) do |f| %>
-                <%= f.input :quantity %>
+                <%= f.input :quantity, input_html: {value: f.object.quantity || '1'} %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.submit "+", class: "plus"%>
             <% end %>
