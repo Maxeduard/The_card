@@ -10,6 +10,12 @@ class OrderItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @order_item = OrderItem.find(params[:id])
+    @order_item.destroy
+    redirect_to order_path(current_user.current_order)
+  end
+
   private
 
   def order_item_params

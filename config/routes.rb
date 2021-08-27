@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:show, :new, :update] do
-    resources :order_items
+    resources :order_items, except: [:destroy]
   end
+  resources :order_items, only: [:destroy]
 end
