@@ -11,7 +11,7 @@
           <p> <%= item.quantity %> </p>
           <p> <%= amount = item.menu_item.price * item.quantity%> €</p>
           <p> Description: <%= item.menu_item.description %> </p>
-          <button class="btn btn-primary ">Delete</button>
+          <%= link_to "delete", order_item_path(item), method: :delete %>
           <% total = total + amount %>
         </div>
       <% end %>
