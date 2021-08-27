@@ -9,11 +9,10 @@
 .category_m {
   flex-wrap: wrap;
   justify-content: space-between;
-  // margin-top: 24px;
   padding: 8px;
   align-content: center;
   box-shadow: none;
-  // margin: 10;
+  margin-bottom: 20px;
 }
 
 .meal {
@@ -84,7 +83,7 @@ h4 {
   color: rgb(0, 37, 36);
   font-weight: 400;
   font-size: 18px;
-  margin-top: 40px;
+  // margin-top: 20px;
   margin-bottom: 16px;
   margin-left: 40px;
   letter-spacing: 1px;
