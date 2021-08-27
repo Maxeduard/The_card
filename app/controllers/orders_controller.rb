@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
     @order = Order.find_by(params[:order_id])
 
     # @orders_total = @order_items.menu_item.sum
-
   end
 
   def update
