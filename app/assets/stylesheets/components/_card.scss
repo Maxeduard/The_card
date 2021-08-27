@@ -67,6 +67,7 @@ h4 {
 }
 
 .scan {
+  margin-top: 50px;
   width: 300px;
   height: 400px;
   border: solid 2px lightgray;
@@ -77,7 +78,8 @@ h4 {
   h3 {
     padding-top: 5px;
   }
-  .fas {
-    font-size: x-large;
+  img {
+    width: 100px;
+    height: 100px;
   }
 }
