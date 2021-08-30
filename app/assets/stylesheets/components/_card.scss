@@ -9,15 +9,13 @@
 .category_m {
   flex-wrap: wrap;
   justify-content: space-between;
-  // margin-top: 24px;
   padding: 8px;
   align-content: center;
   box-shadow: none;
-  // margin: 10;
+  margin-bottom: 32px;
 }
 
 .meal {
-  // background-color: #f8f8f8;
   display: flex;
   justify-content: flex-start;
   width: 100%;
@@ -25,27 +23,36 @@
   position: relative;
   background-color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+  border-radius: 24px;
   padding: 10px;
   margin-top: 16px;
   img {
-    height: 150px;
-    width: 150px;
-    margin-left: 16px;
-    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
   }
 }
 
 .text {
   background-color: white;
-  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 10px;
+  width: 250px;
 }
 
 .name_pri {
   display: flex;
   justify-content: space-between;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(149, 157, 165, 0.5);
+}
+
+.price {
+  color: rgb(18, 121, 72);
+  text-shadow: 2px 2px 4px rgba(149, 157, 165, 0.5)
 }
 
 .quantity {
@@ -54,28 +61,18 @@
 }
 
 .plus {
-  // display: flex;
-  // justify-content: center;
   background-color: rgba(229, 249, 194, 1);
-  // color: rgba(18, 121, 72, 1);
   color: green;
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  // text-align: center;
-  // margin-top: 64px;
   position: absolute;
-  top: 80px;
-  left: 10px;
+  bottom: 6px;
+  right: 6px;
   font-size: 30px;
   font-weight: 900;
   border: solid 2px green;
 }
-
-// .plus[type=submit] {
-//   color: red;
-
-// }
 
 .link {
   padding: 10px;
@@ -87,8 +84,6 @@ h4 {
   color: rgb(0, 37, 36);
   font-weight: 400;
   font-size: 18px;
-  margin-top: 40px;
-  margin-bottom: 16px;
   margin-left: 40px;
   letter-spacing: 1px;
 }
