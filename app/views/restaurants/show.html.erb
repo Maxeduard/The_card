@@ -6,9 +6,11 @@
     <h4 id="drinks">Drinks</h4>
     <% @drinks.each do |menu_item| %>
       <div class="meal">
-        <div class="quantity_num">
-          <p> <%= @order_quantity %></p>
-        </div>
+        <% if @customer_order_quantities[menu_item.name] != nil %>
+          <div class="quantity_num">
+            <p> <%= @customer_order_quantities[menu_item.name] %> </p>
+          </div>
+        <% end %>
         <div class="image">
           <%= image_tag menu_item.image_url %>
         </div>
@@ -36,39 +38,41 @@
     <% end %>
   </div>
 
-
   <div class="category_m">
-    <h4 id="mains">Mains</h4>
+    <h4 id="drinks">Mains</h4>
     <% @mains.each do |menu_item| %>
-
-    <div class="meal">
-      <div class="image">
-        <%= image_tag menu_item.image_url %>
-      </div>
-      <div class="text">
-        <div class="name_pri">
+      <div class="meal">
+        <% if @customer_order_quantities[menu_item.name] != nil %>
+          <div class="quantity_num">
+            <p> <%= @customer_order_quantities[menu_item.name] %> </p>
+          </div>
+        <% end %>
+        <div class="image">
+          <%= image_tag menu_item.image_url %>
+        </div>
+        <div class="text">
+          <div class="name_pri">
             <div class="name">
-              <p> <%= menu_item.name %> </p>
+              <p> <strong><%= menu_item.name %></strong></p>
             </div>
             <div class="price">
               <p> <%= menu_item.price%> €</p>
             </div>
           </div>
           <div class="description">
-            <p> <%= menu_item.description%> </p>
+            <p> <%= menu_item.description %></p>
           </div>
           <div class="quantity">
             <%= simple_form_for([@order, @order_item]) do |f| %>
-              <%= f.input :quantity, input_html: {value: f.object.quantity || '1'} %>
-              <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
-              <%= f.submit "+", class: "plus"%>
+                <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
+                <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
+                <%= f.submit "+", class: "plus"%>
             <% end %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-
 </div>
 
 <%= render 'shared/flying' if current_user %>
