@@ -21,6 +21,7 @@
           <p>x</p>
         </div>
       <% end %>
+
       <div class="qua_box">
         <div class="qua_txt">
           <p>Quantity: </p>
@@ -44,6 +45,7 @@
   <% end %>
   <div class="total_pri_co">
     <h5><strong>Total:   <%= total%>€</strong></h5>
+    <%= link_to "confirm", order_path(action: "confirmed"), method: :patch %>
   </div>
 </div>
 
