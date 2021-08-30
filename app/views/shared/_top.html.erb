@@ -1,5 +1,9 @@
 <div class="container my-5">
-  <h1 class="location">📍 You are at <%= @restaurant.name %></h1>
+  <% if @restaurant %>
+  <h1 class="location">📍 You are at <%= @restaurant.name  %></h1>
   <p class="address"><%= @restaurant.address%></p>
+  <% else %>
+
+  <% end %>
   <%# <%= @svg.html_safe %>
 </div>

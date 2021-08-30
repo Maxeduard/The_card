@@ -1,1 +1,14 @@
-<h1>hi</h1>
+<h1>Invoice</h1>
+<ul>
+<% if @orders_confirmed.exists? %>
+  <% @orders_confirmed.each do |order| %>
+    <% order.order_items.each do |order_item| %>
+      <li><%= order_item.menu_item.name %>: <%= order_item.quantity %>  <%= order_item.menu_item.price %>€</li>
+    <% end %>
+  <% end %>
+<% else %>
+  <p> No confirmed orders yet</p>
+<% end %>
+</ul>
+
+<%= @total.sum %>
