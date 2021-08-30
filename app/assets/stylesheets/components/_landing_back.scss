@@ -38,3 +38,32 @@
   margin-top: 80px;
   padding: 0px 56px;
 }
+
+.button_box {
+  position: absolute;
+  bottom: -240px;
+  width: 100%;
+}
+
+.button_box p {
+  padding-top: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.b_qr {
+  border-radius: 5px;
+  background-color: rgb(18, 121, 72);
+  color: white;
+  margin: 0px 24px;
+  height: 48px;
+}
+
+.b_re {
+  border-radius: 5px;
+  height: 48px;
+  margin: 28px 24px 0px 24px;
+  background-color: white;
+  border: 1px solid rgb(18, 121, 72);
+  color: rgb(18, 121, 72);
+}
