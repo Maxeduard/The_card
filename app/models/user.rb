@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def current_order
     Order.find_or_create_by(user: self, status: 'pending')
   end
+
+  def pay_orders
+    Order.find_or_create_by(user: self, status: 'confirmed', created_at: Time.current.all_day)
+  end
 end
