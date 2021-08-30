@@ -1,29 +1,53 @@
 <%= render 'shared/top' if current_user %>
 
-<div class="container my-5">
-  <h1>Your Cart</h1>
-  <div class="cards">
-    <% total = 0 %>
+<div class="checkbar">
+  <h4>Your Card</h4>
+</div>
 
-      <% @order_items.each do |item| %>
-        <div class="card">
-          <p> <%= item.menu_item.name %> </p>
-          <p> <%= item.quantity %> </p>
-          <p> <%= amount = item.menu_item.price * item.quantity%> €</p>
-          <p> Description: <%= item.menu_item.description %> </p>
-          <%= link_to "delete", order_item_path(item), method: :delete %>
-          <% total = total + amount %>
+<div class="container_co">
+  <h1>Your Items</h1>
+
+  <% total = 0 %>
+
+  <% @order_items.each do |item| %>
+    <div class="meal_co">
+      <div class="name_pri_co">
+        <p> <%= item.menu_item.name %> <i>( <%= item.menu_item.price %> € )</i> </p>
+        <p> Total: <strong><%= amount = item.menu_item.price * item.quantity%> €</strong></p>
+      </div>
+
+      <%= link_to order_item_path(item), method: :delete do%>
+        <div class="delete_btn">
+          <p>x</p>
         </div>
       <% end %>
 
+      <div class="qua_box">
+        <div class="qua_txt">
+          <p>Quantity: </p>
+        </div>
+        <div class="qua-cha">
+          <div class="qua-btn">
+            <p>-</p>
+          </div>
+
+          <div class="qua-fig">
+            <p> <%= item.quantity %> </p>
+          </div>
+
+          <div class="qua-btn">
+            <p>+</p>
+          </div>
+        </div>
+      </div>
+      <% total = total + amount %>
+    </div>
+  <% end %>
+  <div class="total_pri_co">
+    <h5>Total: <%= total%>€</h5>
+    <%= link_to "confirm", order_path(action: "confirmed"), method: :patch %>
   </div>
 </div>
 
-<div class="container my-5">
-  <h1>Your Order</h1>
-  <div class="cards">
-    <p>Total: <%= total%>€</p>
-  </div>
-</div>
 
 <%= render 'shared/flying' if current_user %>

@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :orders
 
-  def current_order
-    Order.find_or_create_by(user: self, status: 'pending')
+  def current_order(restaurant_id)
+    Order.find_or_create_by(user: self, status: 'pending', restaurant_id: restaurant_id)
   end
 
   def pay_orders

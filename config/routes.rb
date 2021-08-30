@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :menu_items, only: [:show, :index]
   end
 
-  resources :orders, only: [:show, :new, :update] do
+  resources :orders, only: [:index, :show, :new, :update] do
     resources :order_items, except: [:destroy]
   end
   resources :order_items, only: [:destroy]

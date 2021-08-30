@@ -1,19 +1,25 @@
 class OrdersController < ApplicationController
+
+  def index
+    @orders = Order.where(user: current_user, restaurant_id: session[:restaurant_id], created_at: Time.current.all_day)
+    @orders_confirmed = @orders.where(status: "confirmed")
+    @total = @orders_confirmed.pluck(:total)
+  end
+
   def show
-    @order_items = OrderItem.all
-
-    @restaurant = Restaurant.find(params[:id])
-    @order = Order.find_by(params[:order_id])
-
-    # @orders_total = @order_items.menu_item.sum
+    @order = Order.find(params[:id])
+    @order_items = @order.order_items
+    @restaurant = @order.order_items.first.menu_item.restaurant if @order.order_items.exists?
   end
 
   def update
-    if @order == Order.find(params[:id])
+    @order = Order.find(params[:id])
+    if @order.status == "pending"
+      @order.status = "confirmed"
+      @order.set_total
       @order.save
-    else
-      @order = Order.new
     end
+    redirect_to orders_path
   end
 
   private
