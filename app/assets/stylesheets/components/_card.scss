@@ -61,8 +61,8 @@
 }
 
 .plus {
-  background-color: rgba(229, 249, 194, 1);
-  color: green;
+  background-color: rgb(229, 249, 194);
+  color: rgb(18, 121, 72);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -72,6 +72,16 @@
   font-size: 30px;
   font-weight: 900;
   border: solid 2px green;
+}
+
+.quantity_num {
+  background-color: red;
+  border-radius: 12px;
+  position: absolute;
+  top: -6px;
+  right: 0px;
+  width: 24px;
+  height: 24px;
 }
 
 .link {
