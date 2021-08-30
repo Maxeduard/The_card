@@ -12,7 +12,7 @@
   <% @order_items.each do |item| %>
     <div class="meal_co">
       <div class="name_pri_co">
-        <p> <%= item.menu_item.name %>...........( <%= item.menu_item.price %> € ) </p>
+        <p> <%= item.menu_item.name %> <i>( <%= item.menu_item.price %> € )</i> </p>
         <p> Total: <strong><%= amount = item.menu_item.price * item.quantity%> €</strong></p>
       </div>
 
@@ -21,42 +21,31 @@
           <p>x</p>
         </div>
       <% end %>
+      <div class="qua_box">
+        <div class="qua_txt">
+          <p>Quantity: </p>
+        </div>
+        <div class="qua-cha">
+          <div class="qua-btn">
+            <p>-</p>
+          </div>
 
-      <p> Quantity: <%= item.quantity %> </p>
+          <div class="qua-fig">
+            <p> <%= item.quantity %> </p>
+          </div>
+
+          <div class="qua-btn">
+            <p>+</p>
+          </div>
+        </div>
+      </div>
       <% total = total + amount %>
     </div>
   <% end %>
-
-</div>
-
-<div class="container my-5">
-  <h1>Your Order</h1>
-  <div class="cards">
-    <p>Total: <%= total%>€</p>
+  <div class="total_pri_co">
+    <h5>Total: <%= total%>€</h5>
   </div>
 </div>
-
-<div class="container my-5">
-  <h1>Your Order</h1>
-  <div class="cards">
-    <p>Total: <%= total%>€</p>
-  </div>
-</div>
-
-<div class="container my-5">
-  <h1>Your Order</h1>
-  <div class="cards">
-    <p>Total: <%= total%>€</p>
-  </div>
-</div>
-
-<div class="container my-5">
-  <h1>Your Order</h1>
-  <div class="cards">
-    <p>Total: <%= total%>€</p>
-  </div>
-</div>
-
 
 
 <%= render 'shared/flying' if current_user %>
