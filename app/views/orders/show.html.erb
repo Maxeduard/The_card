@@ -15,10 +15,10 @@
           <% total = total + amount %>
         </div>
       <% end %>
+      <%= link_to "confirm", order_path(action: "confirmed"), method: :patch %>
 
   </div>
 </div>
-
 <div class="container my-5">
   <h1>Your Order</h1>
   <div class="cards">
