@@ -1,12 +1,16 @@
 .fix {
   position: fixed;
-  bottom: 50px;
+  bottom: 16px;
   width: 100%;
+}
+
+h1 {
+  margin-top: 12px;
 }
 
 .flying {
   background-color: rgb(255, 255, 255);
-  height: 80px;
+  height: 69px;
   border-radius: 40px;
   margin: 0px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -20,22 +24,22 @@
 // }
 
 .order {
-  padding-top: 20px;
+  padding-top: 4px;
   font-size: 30px;
+  padding-left: 20px;
 }
 
 .add {
-  background-color: rgba(18, 121, 72, 1);
-  border: solid 10px rgb(248, 248, 248);
-  border-radius: 50%;
-  width: 91px;
-  height: 91px;
+  background-color: #127948;
+  border: solid 6px #f8f8f8;
+  border-radius: 35px;
+  width: 70px;
+  height: 70px;
   text-align: center;
-  margin-top: -36px;
+  margin-top: -20px;
   color: white;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
-  padding-top: 3px;
 }
 
 .add .h1 {
@@ -44,5 +48,5 @@
 }
 
 .pay {
-  padding-top: 16px;
+  padding-right: 20px;
 }
