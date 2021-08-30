@@ -7,6 +7,8 @@ class RestaurantsController < ApplicationController
     @drinks = @restaurant.menu_items.where(category: "drinks")
     @mains = @restaurant.menu_items.where(category: "mains")
 
+    # @customer_order_quantity =
+
     @qr_code = RQRCode::QRCode.new(@restaurant.qr_code)
     @svg = @qr_code.as_svg(
       offset: 0,

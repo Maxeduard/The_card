@@ -7,7 +7,7 @@
     <% @drinks.each do |menu_item| %>
       <div class="meal">
         <div class="quantity_num">
-          <p> 1 </p>
+          <p> <%= @order_quantity %></p>
         </div>
         <div class="image">
           <%= image_tag menu_item.image_url %>
