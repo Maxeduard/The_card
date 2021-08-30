@@ -1,0 +1,47 @@
+.container_co {
+  background-color: rgb(229, 249, 194);
+  width: 90%;
+  margin: auto;
+  border-radius: 4px;
+  padding-bottom: 22px;
+}
+
+.container_co h1 {
+  padding: 16px;
+  font-size: 24px;
+}
+
+.meal_co {
+  position: relative;
+  background-color: white;
+  width: 90%;
+  margin: 8px auto;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+}
+
+.name_pri_co {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete_btn {
+    display: flex;
+    right: 4px;
+    position: absolute;
+    background-color: red;
+    border-radius: 13px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    top: -10px;
+    right: -10px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .delete_btn p {
+    text-decoration: none;
+    color: white;
+  }
