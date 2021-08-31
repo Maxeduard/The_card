@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :show, :new, :update] do
     resources :order_items, except: [:destroy]
   end
-  resources :order_items, only: [:destroy]
+  resources :order_items, only: [:destroy, :update]
 end
