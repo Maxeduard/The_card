@@ -33,12 +33,6 @@
     object-fit: cover;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    image: -webkit-linear-gradient(left,
-    rgba(0,0,0,0.9) 0%,
-    rgba(0,0,0,0) 20%,
-    rgba(0,0,0,0) 80%,
-    rgba(0,0,0,0.9) 100%
-  )
   }
 }
 
@@ -55,12 +49,12 @@
   font-weight: 900;
   letter-spacing: 1px;
   font-size: 20px;
-  text-shadow: 2px 2px 4px rgba(149, 157, 165, 0.5);
+  text-shadow: 1px 1px 2px rgba(149, 157, 165, 0.5);
 }
 
 .price {
   color: rgb(18, 121, 72);
-  text-shadow: 2px 2px 4px rgba(149, 157, 165, 0.5)
+  text-shadow: 1px 1px 2px rgba(149, 157, 165, 0.5)
 }
 
 .quantity {
@@ -70,18 +64,23 @@
 
 .description {
   display: flex;
+  width: 80%;
+  margin-right: 48px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .plus {
   background-color: rgb(229, 249, 194);
   color: rgb(18, 121, 72);
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
   position: absolute;
   bottom: 6px;
   right: 6px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   border: none;
   padding: 0px;
