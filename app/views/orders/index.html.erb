@@ -28,3 +28,4 @@
 </div>
 
 <%= link_to "Pay", orders_path(action: "paid"), method: :patch %>
+<%= render 'shared/flying' if current_user %>
