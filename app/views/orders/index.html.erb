@@ -1,13 +1,12 @@
 <h1 class="invoice">Invoice</h1>
 
-<div class="receipt_header">
-  <p>QTY</p>
-  <p>DESCRIPTION</p>
-  <p>PRICE</p>
-  <p>AMOUNT</p>
-</div>
-
 <% if @orders_confirmed.exists? %>
+  <div class="receipt_header">
+    <p>QTY</p>
+    <p>DESCRIPTION</p>
+    <p>PRICE</p>
+    <p>AMOUNT</p>
+  </div>
   <% @orders_confirmed.each do |order| %>
     <% order.order_items.each do |order_item| %>
       <div class="receipt_body">
@@ -29,20 +28,17 @@
       </div>
     <% end %>
   <% end %>
-<% else %>
-  <p> No confirmed orders yet</p>
-<% end %>
-<div class="receipt_footer">
-  <div class="receipt_sum">
-     <div class="receipt_total">
-      <p>TOTAL</p>
+  <div class="receipt_footer">
+    <div class="receipt_sum">
+      <div class="receipt_total">
+        <p>TOTAL</p>
+      </div>
+      <div class="receipt_amount">
+        <p><em><%= @total.sum %></em></p>
+        <p><em>€</em></p>
+      </div>
     </div>
-    <div class="receipt_amount">
-      <p><em><%= @total.sum %></em></p>
-      <p><em>€</em></p>
-    </div>
-  </div>
-  <div class="receipt_vat">
+    <div class="receipt_vat">
     <div class="vat">
       <p>VAT%</p>
     </div>
@@ -65,9 +61,7 @@
     </div>
   </div>
 </div>
-
 <p class="invoice">Select a payment method</p>
-
 <div class="payment_method">
   <div>
     <input type="radio" id="PayPal" name="PayPal" value="PayPal">
@@ -79,8 +73,11 @@
     <label for="Cash"><i class="fas fa-money-bill-wave"></i></label>
   </div>
 </div>
-
 <div class="pay_btn">
   <%= link_to "Pay", paid_path, method: :get %>
 </div>
+<% else %>
+  <p class="invoice"> No confirmed orders yet</p>
+<% end %>
+
 <%= render 'shared/flying' if current_user %>

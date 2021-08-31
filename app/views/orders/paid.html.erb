@@ -11,11 +11,59 @@
   <i class="fas fa-check-circle fas_check"></i>
 </div>
 
-<ul>
-  <% @orders_paid.each do |order| %>
-      <% order.order_items.each do |order_item| %>
-        <li><%= order_item.menu_item.name %>: <%= order_item.quantity %>  <%= order_item.menu_item.price %>€</li>
-      <% end %>
+<p class="invoice">The waiter will be at your table soon.</p>
+
+<% @orders_paid.each do |order| %>
+    <% order.order_items.each do |order_item| %>
+      <div class="receipt_body">
+        <div class="receipt_quantity">
+          <p><%= order_item.quantity %></p>
+        </div>
+        <div class="receipt_description">
+          <p><%= order_item.menu_item.name %></p>
+        </div>
+        <div class="receipt_price">
+          <p><%= order_item.menu_item.price %></p>
+        </div>
+        <div class="receipt_amount">
+          <p><%= order_item.quantity * order_item.menu_item.price %></p>
+        </div>
+        <div class="receipt_currency">
+          <p><em>€</em></p>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-</ul>
-<p>The waiter will be at your table soon.</p>
+  <div class="receipt_footer">
+    <div class="receipt_sum">
+      <div class="receipt_total">
+        <p>TOTAL</p>
+      </div>
+      <div class="receipt_amount">
+        <p><em><%= @total.sum %></em></p>
+        <p><em>€</em></p>
+      </div>
+    </div>
+    <div class="receipt_vat">
+    <div class="vat">
+      <p>VAT%</p>
+    </div>
+    <div class="vat">
+      <p>NET</p>
+    </div>
+    <div class="vat">
+      <p>VAT</p>
+    </div>
+  </div>
+  <div class="receipt_vat">
+    <div class="vat">
+      <p>19.00</p>
+    </div>
+    <div class="vat">
+      <p><%= (@total.sum * 0.81).round(2) %></p>
+    </div>
+    <div class="vat">
+      <p><%= (@total.sum - (@total.sum * 0.81)).round(2) %></p>
+    </div>
+  </div>
+</div>
