@@ -1,0 +1,9 @@
+<h1>Thank you for visiting us</h1>
+<ul>
+  <% @orders_paid.each do |order| %>
+      <% order.order_items.each do |order_item| %>
+        <li><%= order_item.menu_item.name %>: <%= order_item.quantity %>  <%= order_item.menu_item.price %>€</li>
+      <% end %>
+  <% end %>
+</ul>
+<p>The waiter will be at your table soon.</p>

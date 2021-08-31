@@ -22,6 +22,16 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
+  def paid
+    @orders = Order.where(user: current_user, restaurant_id: session[:restaurant_id], created_at: Time.current.all_day)
+    @orders_confirmed = @orders.where(status: "confirmed")
+    @orders_confirmed.each do |order|
+      order.status = "paid"
+      order.save
+    end
+    @orders_paid = @orders.where(status: "paid")
+  end
+
   private
 
   def order_params
