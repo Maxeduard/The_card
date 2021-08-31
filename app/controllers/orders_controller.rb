@@ -31,6 +31,7 @@ class OrdersController < ApplicationController
       order.save
     end
     @orders_paid = @orders.where(status: "paid")
+    @total = @orders_paid.pluck(:total)
   end
 
   private
