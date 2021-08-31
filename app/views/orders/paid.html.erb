@@ -1,4 +1,16 @@
-<h1>Thank you for visiting us</h1>
+<%= render 'shared/top' if current_user %>
+
+<div class="checkbar">
+  <h4>Confirmation</h4>
+</div>
+
+
+<h5>Thank you for your order!</h5>
+
+<div class="check_sign">
+  <i class="fas fa-check-circle fas_check"></i>
+</div>
+
 <ul>
   <% @orders_paid.each do |order| %>
       <% order.order_items.each do |order_item| %>
