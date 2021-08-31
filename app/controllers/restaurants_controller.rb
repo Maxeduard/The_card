@@ -7,6 +7,8 @@ class RestaurantsController < ApplicationController
     create_order
     @drinks = @restaurant.menu_items.where(category: "drinks")
     @mains = @restaurant.menu_items.where(category: "mains")
+    @appetizer = @restaurant.menu_items.where(category: "appetizer")
+    @dessert = @restaurant.menu_items.where(category: "dessert")
 
     @customer_order_quantities = {}
     @order.order_items.each do |order_item|

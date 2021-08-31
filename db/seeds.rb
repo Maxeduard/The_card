@@ -23,8 +23,12 @@ menu_five = { name: "Chicken Curry", category: "mains", price: 8, description: "
 menu_six = { name: "Ravioli", category: "mains", price: 7, description: "with Champion", image_url: "https://images.unsplash.com/photo-1587740908075-9e245070dfaa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" }
 menu_seven = { name: "Ice Tea", category: "drinks", price: 3, description: "Lemon", image_url: "https://images.unsplash.com/photo-1584351056582-50d8bbb8ea18?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" }
 menu_eight = { name: "Spaghetti", category: "mains", price: 8, description: "Cabonara", image_url: "https://images.unsplash.com/photo-1608334481162-bba440193a20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80" }
+menu_nine = { name: "Ice Cream", category: "dessert", price: 3, description: "Strawberry", image_url: "https://images.unsplash.com/photo-1597249536924-b226b1a1259d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80" }
+menu_ten = { name: "Carpaccio", category: "appetizer", price: 7, description: "carpaccio", image_url: "https://images.unsplash.com/photo-1613420408779-e517581a26aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" }
+menu_eleven = { name: "Bruschetta", category: "appetizer", price: 6, description: "The Classic", image_url: "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" }
+menu_twelve = { name: "Pancake", category: "dessert", price: 5, description: "With honey", image_url: "https://images.unsplash.com/photo-1565299543923-37dd37887442?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=828&q=80" }
 
-[menu_one, menu_two, menu_three, menu_four, menu_five, menu_six, menu_seven, menu_eight].each do |menu|
+[menu_one, menu_two, menu_three, menu_four, menu_five, menu_six, menu_seven, menu_eight, menu_nine, menu_ten, menu_eleven, menu_twelve].each do |menu|
   menu_item = MenuItem.new(menu)
   menu_item.restaurant = restaurant_one
   menu_item.save
