@@ -1,31 +1,4 @@
-<h1>Invoice</h1>
-<ul>
-<% if @orders_confirmed.exists? %>
-  <% @orders_confirmed.each do |order| %>
-    <% order.order_items.each do |order_item| %>
-      <li><%= order_item.menu_item.name %>: <%= order_item.quantity %>  <%= order_item.menu_item.price %>€</li>
-    <% end %>
-  <% end %>
-<% else %>
-  <p> No confirmed orders yet</p>
-<% end %>
-</ul>
-
-<%= @total.sum %>
-
-<p>Select a payment method</p>
-
-<div class="payment_method">
-  <div>
-    <input type="radio" id="PayPal" name="PayPal" value="PayPal">
-    <label for="PayPal">PayPal</label>
-  </div>
-
-  <div>
-    <input type="radio" id="Cash" name="Cash" value="Cash">
-    <label for="Cash">Cash</label>
-  </div>
-</div>
+<h1 class="invoice">Invoice</h1>
 
 <div class="receipt_header">
   <p>QTY</p>
@@ -33,8 +6,78 @@
   <p>PRICE</p>
   <p>AMOUNT</p>
 </div>
-<div class="receipt_body">
 
+<% if @orders_confirmed.exists? %>
+  <% @orders_confirmed.each do |order| %>
+    <% order.order_items.each do |order_item| %>
+      <div class="receipt_body">
+        <div class="receipt_quantity">
+          <p><%= order_item.quantity %></p>
+        </div>
+        <div class="receipt_description">
+          <p><%= order_item.menu_item.name %></p>
+        </div>
+        <div class="receipt_price">
+          <p><%= order_item.menu_item.price %></p>
+        </div>
+        <div class="receipt_amount">
+          <p><%= order_item.quantity * order_item.menu_item.price %></p>
+        </div>
+        <div class="receipt_currency">
+          <p><em>€</em></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <p> No confirmed orders yet</p>
+<% end %>
+<div class="receipt_footer">
+  <div class="receipt_sum">
+     <div class="receipt_total">
+      <p>TOTAL</p>
+    </div>
+    <div class="receipt_amount">
+      <p><em><%= @total.sum %></em></p>
+      <p><em>€</em></p>
+    </div>
+  </div>
+  <div class="receipt_vat">
+    <div class="vat">
+      <p>VAT%</p>
+    </div>
+    <div class="vat">
+      <p>NET</p>
+    </div>
+    <div class="vat">
+      <p>VAT</p>
+    </div>
+  </div>
+  <div class="receipt_vat">
+    <div class="vat">
+      <p>19.00</p>
+    </div>
+    <div class="vat">
+      <p><%= (@total.sum * 0.81).round(2) %></p>
+    </div>
+    <div class="vat">
+      <p><%= (@total.sum - (@total.sum * 0.81)).round(2) %></p>
+    </div>
+  </div>
+</div>
+
+<p class="invoice">Select a payment method</p>
+
+<div class="payment_method">
+  <div>
+    <input type="radio" id="PayPal" name="PayPal" value="PayPal">
+    <label for="PayPal"><i class="fab fa-cc-paypal"></i></label>
+  </div>
+
+  <div>
+    <input type="radio" id="Cash" name="Cash" value="Cash">
+    <label for="Cash"><i class="fas fa-money-bill-wave"></i></label>
+  </div>
 </div>
 
 <%= link_to "Pay", paid_path, method: :patch %>
