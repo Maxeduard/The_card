@@ -4,6 +4,10 @@
     width: 90%;
     margin: auto;
     border-bottom: dotted 4px;
+    background-color: rgba(147,147,147, 0.4);
+    padding-top: 16px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 
   .receipt_body {
@@ -11,4 +15,100 @@
     justify-content: space-between;
     width: 90%;
     margin: auto;
+    background-color: rgba(147,147,147, 0.4);
+    padding-left: 8px;
+    padding-right: 8px;
   }
+
+  .receipt_quantity {
+    width: 25%;
+    justify-content: start;
+  }
+
+  .receipt_description {
+    width: 50%;
+    justify-content: start;
+  }
+
+  .receipt_price {
+    width: 5%;
+    justify-content: start;
+  }
+
+  .receipt_amount {
+    width: 15%;
+    justify-content: start;
+  }
+
+  .receipt_currency {
+    width: 5%;
+    justify-content: start;
+  }
+
+.receipt_footer {
+  width: 90%;
+  margin: auto;
+  border-top: dotted 4px;
+  background-color: rgba(147,147,147, 0.4);
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.receipt_sum {
+  display: flex;
+}
+
+.receipt_total {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.receipt_amount {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.payment_method {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.receipt_vat {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  border-top: dotted 4px;
+  border-bottom: dotted 4px;
+}
+
+.vat {
+  width: 30%;
+}
+
+.invoice {
+  text-align: center;
+}
+
+.fa-money-bill-wave {
+  font-size: xx-large;
+  color: rgb(18, 121, 72);
+  padding: 8px;
+  border: solid 1px rgba(147,147,147, 0.4);
+  border-radius: 4px;
+  background-color: rgba(147,147,147, 0.4);
+}
+
+.fa-cc-paypal {
+  font-size: xx-large;
+  color: rgb(18, 121, 72);
+  padding: 8px;
+  border: solid 1px rgba(147,147,147, 0.4);
+  border-radius: 4px;
+  background-color: rgba(147,147,147, 0.4);
+}
