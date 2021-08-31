@@ -27,4 +27,14 @@
   </div>
 </div>
 
-<%= link_to "Pay", orders_path(action: "paid"), method: :patch %>
+<div class="receipt_header">
+  <p>QTY</p>
+  <p>DESCRIPTION</p>
+  <p>PRICE</p>
+  <p>AMOUNT</p>
+</div>
+<div class="receipt_body">
+
+</div>
+
+<%= link_to "Pay", paid_path, method: :patch %>
