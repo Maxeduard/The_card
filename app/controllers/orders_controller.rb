@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @order_items = @order.order_items
+    @order_items = @order.order_items.order(:created_at)
     @restaurant = @order.order_items.first.menu_item.restaurant if @order.order_items.exists?
   end
 

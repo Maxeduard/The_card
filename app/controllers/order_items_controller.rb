@@ -25,6 +25,17 @@ class OrderItemsController < ApplicationController
     redirect_to order_path(current_user.current_order(session[:restaurant_id]))
   end
 
+  def update
+    @order_item = OrderItem.find(params[:id])
+    if params[:change] == "+"
+      @order_item.quantity += 1
+    else
+      @order_item.quantity -= 1
+    end
+    @order_item.save
+    redirect_to order_path(@order_item.order)
+  end
+
   private
 
   def order_item_params
