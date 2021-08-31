@@ -49,4 +49,9 @@ h1 {
 
 .pay {
   padding-right: 20px;
+  color: lightgrey;
+  :hover {
+    color: gray ;
+    opacity: 0.5;
+  }
 }
