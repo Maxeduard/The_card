@@ -1,12 +1,14 @@
 class OrdersController < ApplicationController
 
   def index
+    @restaurant = Restaurant.find(session[:restaurant_id])
     @orders = Order.where(user: current_user, restaurant_id: session[:restaurant_id], created_at: Time.current.all_day)
     @orders_confirmed = @orders.where(status: "confirmed")
     @total = @orders_confirmed.pluck(:total)
   end
 
   def show
+    @restaurant = Restaurant.find(session[:restaurant_id])
     @order = Order.find(params[:id])
     @order_items = @order.order_items.order(:created_at)
     @restaurant = @order.order_items.first.menu_item.restaurant if @order.order_items.exists?
