@@ -80,4 +80,7 @@
   </div>
 </div>
 
-<%= link_to "Pay", paid_path, method: :patch %>
+<div class="pay_btn">
+  <%= link_to "Pay", paid_path, method: :get %>
+</div>
+<%= render 'shared/flying' if current_user %>

@@ -1,7 +1,7 @@
 <div class="fix">
   <div class="flying">
     <%= link_to order_path(current_user.current_order(session[:restaurant_id])) do%>
-      <h1 class="order">🛒</h1>
+      <h1 class="order"><i class="fas fa-shopping-basket"></i></h1>
     <% end %>
     <div class="try">
       <%= link_to restaurant_path(session[:restaurant_id]) do%>

@@ -9,10 +9,10 @@ class OrderItemsController < ApplicationController
     if @present_order_item
       @present_order_item.quantity += 1
       @present_order_item.save
-      redirect_to restaurant_path(@order_item.order.restaurant)
+      redirect_to restaurant_path(@order_item.order.restaurant, anchor: "menu_item#{@order_item.menu_item.id}")
     else
       if @order_item.save
-        redirect_to restaurant_path(@order_item.order.restaurant)
+        redirect_to restaurant_path(@order_item.order.restaurant, anchor: "menu_item#{@order_item.menu_item.id}")
       else
         render 'restaurants/show'
       end
