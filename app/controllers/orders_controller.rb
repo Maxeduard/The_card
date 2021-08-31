@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
   def paid
     @orders = Order.where(user: current_user, restaurant_id: session[:restaurant_id], created_at: Time.current.all_day)
     @orders_confirmed = @orders.where(status: "confirmed")
+    @restaurant = Restaurant.find(session[:restaurant_id])
     @orders_confirmed.each do |order|
       order.status = "paid"
       order.save

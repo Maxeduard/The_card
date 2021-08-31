@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :order_items, except: [:destroy]
   end
 
-  patch 'paid', to: 'orders#paid', as: :paid
+  get 'paid', to: 'orders#paid', as: :paid
 
   resources :order_items, only: [:destroy, :update]
 
