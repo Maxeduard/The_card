@@ -28,8 +28,10 @@
         </div>
         <div class="qua-cha">
           <div class="qua-btn">
-          <%= link_to order_item_path(item, change: "-"), method: :patch do %>
-            <p>-</p>
+          <% if item.quantity != 1 %>
+            <%= link_to order_item_path(item, change: "-"), method: :patch, :disabled => true do %>
+              <p>-</p>
+            <%end %>
           <%end %>
           </div>
 
@@ -49,7 +51,11 @@
   <% end %>
   <div class="total_pri_co">
     <h5><strong>Total:   <%= total%>€</strong></h5>
-    <%= link_to "confirm", order_path(action: "confirmed"), method: :patch %>
+    <div class="help_flex">
+      <div class="confirm_btn">
+        <%= link_to "confirm", order_path(action: "confirmed"), method: :patch %>
+      </div>
+    </div>
   </div>
 </div>
 
