@@ -12,3 +12,19 @@
 </ul>
 
 <%= @total.sum %>
+
+<p>Select a payment method</p>
+
+<div class="payment_method">
+  <div>
+    <input type="radio" id="PayPal" name="PayPal" value="PayPal">
+    <label for="PayPal">PayPal</label>
+  </div>
+
+  <div>
+    <input type="radio" id="Cash" name="Cash" value="Cash">
+    <label for="Cash">Cash</label>
+  </div>
+</div>
+
+<%= link_to "Pay", orders_path(action: "paid"), method: :patch %>
