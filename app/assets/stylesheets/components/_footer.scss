@@ -1,7 +1,7 @@
 .footer_container {
-  background-color: aquamarine;
+  background-color: rgb(147, 147, 147);
   width: 100%;
-  height: 420px;
+  height: 440px;
   padding-bottom: 120px;
   display: flex;
   justify-content: center;
@@ -9,14 +9,12 @@
 }
 
 .text_footer {
-  background-color: white;
   width: 90%;
   height: 90%;
   margin-top: 16px;
 }
 
 .authors {
-  background-color: blue;
   width: 100%;
   height: 100px;
   display: flex;
@@ -30,30 +28,68 @@
 }
 
 .author img {
-  // padding-top: 10px;
-  width: 60px;
-  height: 60px;
+  width: 48px;
   border-radius: 50%;
+  margin-top: 8px;
 }
 
 .author h4 {
   margin: 0px;
   font-size: 10px;
+  font-family: "Raleway";
 }
 
 .le_conc {
-  background-color: blueviolet;
   width: 100%;
   height: 100px;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.le_conc h3 {
+  font-family: 'Gloria Hallelujah';
+  font-size: 20px;
+  border-top: solid 1px;
+  padding-top: 8px;
 }
 
 #navbar_concierge_bell {
   color: #997E41;
-  margin-left: 10px;
+  padding-top: 8px;
 }
 
 .le_wagon {
-  background-color: black;
   width: 100%;
   height: 100px;
+  font-family: "Raleway";
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.le_wagon h3 {
+  font-family: 'Gloria Hallelujah';
+  font-size: 20px;
+  border-top: solid 1px;
+  padding-top: 8px;
+}
+
+.le_wagon img {
+  width: 40px;
+  padding-top: 8px;
+  border-radius: 20px;
+}
+
+.le_wagon img:hover,
+.author img:hover,{
+  filter: brightness(80%);
+}
+
+#navbar_concierge_bell:hover {
+  color: #997f418d;
+}
+
+.author img:hover {
+  box-shadow: 1px 1px 2px rgba($color: #3d3c3c, $alpha: 1);
 }
