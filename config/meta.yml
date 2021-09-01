@@ -1,0 +1,8 @@
+# config/meta.yml
+
+meta_product_name: "The Card"
+meta_title: "The Card - Stop waiting, start eating!"
+meta_description: "You are under time pressure? With The Card you don't need to wait for the service but you can send your order directly to the kitchen - and pay!"
+# missing type
+# missing url
+meta_image: "meta_pic.png" # should exist in `app/assets/images/`
