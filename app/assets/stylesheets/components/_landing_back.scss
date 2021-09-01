@@ -56,7 +56,25 @@
   background-color: rgb(18, 121, 72);
   color: white;
   margin: 0px 24px;
-  height: 48px;
+  height: 160x;
+  padding-bottom: 4px;
+}
+
+.b_qr h6{
+  padding-top: 16px;
+  font-family: "Raleway";
+}
+
+.qr_c {
+  display: flex;
+}
+
+.qr_c_2 {
+  margin: 16px 0px 8px 0px;
+}
+
+.b_qr img {
+  width: 64px;
 }
 
 .b_re {
