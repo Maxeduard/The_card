@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TheCard</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,6 +8,26 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= favicon_link_tag %>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <%# metadata - test %>
+    <%# <title>TheCard - Stop waiting, start eating</title> %>
+    <%# <meta name="description" content="You are under time pressure? With The Card you don't need to wait for the service but you can send your order directly to the kitchen - and pay!"> %>
+    <meta name="author" content="Janus Vollmer, Louis Neubauer, Max von Wedemeyer">
+    <%# <meta name="url" content="www.thecardapp.biz"> %>
+
+    <%# copy and paste %>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
   </head>
 
   <body>
