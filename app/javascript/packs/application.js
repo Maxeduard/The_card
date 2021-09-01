@@ -26,9 +26,11 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initCards } from '../plugins/init_cards.js';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  const RestaurantCards = document.querySelector('.cards')
+  if(RestaurantCards) {
+    initCards();
+  }
 });
