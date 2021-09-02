@@ -64,3 +64,16 @@ h1 {
     color: rgb(55, 55, 55) ;
   }
 }
+
+.fa-cc-paypal,
+.fa-credit-card,
+.fa-money-bill-wave {
+  font-size: 32px;
+  color: #127948;
+}
+
+#PayPal,
+#Card,
+#Cash {
+  vertical-align: super;
+}
