@@ -149,6 +149,43 @@
       </div>
     <% end %>
   </div>
+
+ <div class="category_m">
+    <h4 id="digestiv">Digestiv</h4>
+    <% @digestiv.each do |menu_item| %>
+      <div class="meal" id="menu_item<%= menu_item.id %>">
+        <% if @customer_order_quantities[menu_item.name] != nil %>
+          <div class="quantity_num">
+            <p> <%= @customer_order_quantities[menu_item.name] %> </p>
+          </div>
+        <% end %>
+        <div class="image">
+          <%= image_tag menu_item.image_url %>
+        </div>
+        <div class="text">
+          <div class="name_pri">
+            <div class="name">
+              <p> <strong><%= menu_item.name %></strong></p>
+            </div>
+            <div class="price">
+              <p> <%= menu_item.price%> €</p>
+            </div>
+          </div>
+          <div class="description">
+            <p> <%= menu_item.description %></p>
+          </div>
+          <div class="quantity">
+            <%= simple_form_for([@order, @order_item]) do |f| %>
+                <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
+                <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
+                <%= f.input :item_category, input_html: { value: 'dessert' }, as: :hidden %>
+                <%= f.submit "+", class: "plus"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 

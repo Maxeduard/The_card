@@ -68,7 +68,12 @@
   </div>
 
   <div class="time">
-    <% time = @total.sum * 0.2%>
+
+  <%if Order.last.total >= 10 %>
+    <% time = 10 + Order.last.total * 0.2%>
+  <%else  %>
+    <% time = 2 + Order.last.total * 0.2%>
+  <%end %>
     <h6 >Your order takes:</h6>
     <h6 id="minutes"> <strong><%= time.round() %></strong> minutes</h6>
   </div>
