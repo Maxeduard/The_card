@@ -27,7 +27,7 @@ menu_nine = { name: "Ice Cream", category: "dessert", price: 3, description: "St
 menu_ten = { name: "Carpaccio", category: "appetizer", price: 7, description: "carpaccio", image_url: "https://images.unsplash.com/photo-1613420408779-e517581a26aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" }
 menu_eleven = { name: "Bruschetta", category: "appetizer", price: 6, description: "The Classic", image_url: "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" }
 menu_twelve = { name: "Pancake", category: "dessert", price: 5, description: "With honey", image_url: "https://images.unsplash.com/photo-1565299543923-37dd37887442?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=828&q=80" }
-menu_thirteen = { name: "Schnaps", category: "drinks", price: 2, description: "Kirschwasser", image_url: "https://images.unsplash.com/photo-1525081265669-4c1bac7ccd10?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" }
+menu_thirteen = { name: "Schnaps", category: "digestiv", price: 2, description: "Kirschwasser", image_url: "https://images.unsplash.com/photo-1525081265669-4c1bac7ccd10?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" }
 
 [menu_one, menu_two, menu_three, menu_four, menu_five, menu_six, menu_seven, menu_eight, menu_nine, menu_ten, menu_eleven, menu_twelve, menu_thirteen].each do |menu|
   menu_item = MenuItem.new(menu)
