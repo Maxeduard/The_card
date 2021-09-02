@@ -39,7 +39,7 @@
           <p>TOTAL</p>
         </div>
         <div class="receipt_amount">
-          <p><em><%= @total.sum %></em></p>
+          <p><strong><%= @total.sum %></strong></p>
           <p><em>€</em></p>
         </div>
       </div>
@@ -68,12 +68,7 @@
   </div>
 
   <div class="time">
-
-  <%if Order.last.total >= 10 %>
-    <% time = 10 + Order.last.total * 0.2%>
-  <%else  %>
-    <% time = 2 + Order.last.total * 0.2%>
-  <%end %>
+    <% time = @total.last * 0.4%>
     <h6 >Your order takes:</h6>
     <h6 id="minutes"> <strong><%= time.round() %></strong> minutes</h6>
   </div>
@@ -84,16 +79,16 @@
   <p class="invoice">Select a payment method</p>
   <div class="payment_method">
     <div>
-      <input type="radio" id="PayPal" name="Payment" value="PayPal">
-      <label for="PayPal"><i class="fab fa-cc-paypal fa"></i></label>
+      <input type="radio" id="PayPal" name="PayPal" value="PayPal">
+      <label for="PayPal"><i class="fab fa-cc-paypal"></i></label>
     </div>
     <div>
-      <input type="radio" id="Card" name="Payment" value="Card">
-      <label for="Card"><i class=""><i class="far fa-credit-card fa"></i></i></label>
+      <input type="radio" id="Card" name="Card" value="Card">
+      <label for="Card"><i class=""><i class="far fa-credit-card"></i></i></label>
     </div>
     <div>
-      <input type="radio" id="Cash" name="Payment" value="Cash">
-      <label for="Cash"><i class="fas fa-money-bill-wave fa"></i></label>
+      <input type="radio" id="Cash" name="Cash" value="Cash">
+      <label for="Cash"><i class="fas fa-money-bill-wave"></i></label>
     </div>
   </div>
   <div class="pay_btn">
