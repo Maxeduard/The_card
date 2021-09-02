@@ -66,22 +66,29 @@
       </div>
     </div>
   </div>
+
+  <div class="time">
+    <% time = @total.sum * 0.2%>
+    <h6 >Your order takes:</h6>
+    <h6 id="minutes"> <strong><%= time.round() %></strong> minutes</h6>
+  </div>
+
   <div class="checkbar" id="order_way">
     <h4>Your order is on its way!</h4>
   </div>
   <p class="invoice">Select a payment method</p>
   <div class="payment_method">
     <div>
-      <input type="radio" id="PayPal" name="PayPal" value="PayPal">
-      <label for="PayPal"><i class="fab fa-cc-paypal"></i></label>
+      <input type="radio" id="PayPal" name="Payment" value="PayPal">
+      <label for="PayPal"><i class="fab fa-cc-paypal fa"></i></label>
     </div>
     <div>
-      <input type="radio" id="Card" name="Card" value="Card">
-      <label for="Card"><i class=""><i class="far fa-credit-card"></i></i></label>
+      <input type="radio" id="Card" name="Payment" value="Card">
+      <label for="Card"><i class=""><i class="far fa-credit-card fa"></i></i></label>
     </div>
     <div>
-      <input type="radio" id="Cash" name="Cash" value="Cash">
-      <label for="Cash"><i class="fas fa-money-bill-wave"></i></label>
+      <input type="radio" id="Cash" name="Payment" value="Cash">
+      <label for="Cash"><i class="fas fa-money-bill-wave fa"></i></label>
     </div>
   </div>
   <div class="pay_btn">

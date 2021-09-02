@@ -6,8 +6,8 @@
     border-bottom: dotted 4px;
     background-color: rgba(147,147,147, 0.4);
     padding-top: 16px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .receipt_body {
@@ -16,8 +16,8 @@
     width: 90%;
     margin: auto;
     background-color: rgba(147,147,147, 0.4);
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .receipt_quantity {
@@ -50,8 +50,8 @@
   margin: auto;
   border-top: dotted 4px;
   background-color: rgba(147,147,147, 0.4);
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
   padding-bottom: 24px;
   margin-bottom: 24px;
 }
@@ -95,17 +95,7 @@
   text-align: center;
 }
 
-.fa-money-bill-wave {
-  font-size: xx-large;
-  color: rgb(18, 121, 72);
-}
-
-.fa-cc-paypal {
-  font-size: xx-large;
-  color: rgb(18, 121, 72);
-}
-
-.fa-credit-card {
+.fa {
   font-size: xx-large;
   color: rgb(18, 121, 72);
 }
@@ -120,4 +110,22 @@
   margin: 24px 0px;
   position: sticky;
   bottom: 120px;
+}
+
+.time {
+  text-align: center;
+  width: 48%;
+  background-color: white;
+  border-radius: 80%;
+  padding: 24px;
+  box-shadow: 1px 1px 2px rgba(147,147,147, 0.4);
+  margin: auto;
+}
+
+#minutes {
+  font-size: 28px;
+}
+
+.time h6 {
+  font-size: 24px;
 }
