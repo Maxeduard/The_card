@@ -1,1 +1,7 @@
-$('#item_quantity<%= @order_item.menu_item.id%> > p').text(<%= @present_order_item.quantity%>);
+console.log(<%= @order_present %>);
+
+if(<%= @order_present %> == true) {
+  $('#item_quantity<%= @order_item.menu_item.id%> > p').text(<%= @quantity%>);
+} else {
+  $('#menu_item<%= @order_item.menu_item.id %>').prepend('<div class="quantity_num" id="item_quantity<%= @order_item.menu_item.id %>"><p><%= 1 %></p></div>');
+}
