@@ -155,7 +155,7 @@
     <% @digestiv.each do |menu_item| %>
       <div class="meal" id="menu_item<%= menu_item.id %>">
         <% if @customer_order_quantities[menu_item.name] != nil %>
-          <div class="quantity_num">
+          <div class="quantity_num" id="item_quantity<%= menu_item.id %>">
             <p> <%= @customer_order_quantities[menu_item.name] %> </p>
           </div>
         <% end %>
