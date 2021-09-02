@@ -13,5 +13,4 @@ Rails.application.routes.draw do
   get 'paid', to: 'orders#paid', as: :paid
 
   resources :order_items, only: [:destroy, :update]
-  get 'quantity_update/:order_id/:item_id', to: 'orders#quantity_update'
 end

@@ -7,7 +7,7 @@
     <% @drinks.each do |menu_item| %>
       <div class="meal" id="menu_item<%= menu_item.id %>">
         <% if @customer_order_quantities[menu_item.name] != nil %>
-          <div class="quantity_num">
+          <div class="quantity_num" id="item_quantity<%= menu_item.id %>">
             <p> <%= @customer_order_quantities[menu_item.name] %> </p>
           </div>
         <% end %>
@@ -31,7 +31,7 @@
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.input :item_category, input_html: { value: 'drinks' }, as: :hidden %>
-                <%= f.submit "+", data: { order: @order.id, item: menu_item.id}, class: "plus"%>
+                <%= f.submit "+", class: "plus"%>
             <% end %>
           </div>
         </div>
@@ -44,7 +44,7 @@
     <% @appetizer.each do |menu_item| %>
       <div class="meal" id="menu_item<%= menu_item.id %>">
         <% if @customer_order_quantities[menu_item.name] != nil %>
-          <div class="quantity_num">
+          <div class="quantity_num" id="item_quantity<%= menu_item.id %>">
             <p> <%= @customer_order_quantities[menu_item.name] %> </p>
           </div>
         <% end %>
@@ -68,7 +68,7 @@
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.input :item_category, input_html: { value: 'appetizer' }, as: :hidden %>
-                <%= f.submit "+", data: { order: @order.id, item: menu_item.id}, class: "plus"%>
+                <%= f.submit "+", class: "plus"%>
             <% end %>
           </div>
         </div>
@@ -81,7 +81,7 @@
     <% @mains.each do |menu_item| %>
       <div class="meal" id="menu_item<%= menu_item.id %>">
         <% if @customer_order_quantities[menu_item.name] != nil %>
-          <div class="quantity_num">
+          <div class="quantity_num" id="item_quantity<%= menu_item.id %>">
             <p> <%= @customer_order_quantities[menu_item.name] %> </p>
           </div>
         <% end %>
@@ -105,7 +105,7 @@
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.input :item_category, input_html: { value: 'mains' }, as: :hidden %>
-                <%= f.submit "+", data: { order: @order.id, item: menu_item.id}, class: "plus"%>
+                <%= f.submit "+", class: "plus"%>
             <% end %>
           </div>
         </div>
@@ -118,7 +118,7 @@
     <% @dessert.each do |menu_item| %>
       <div class="meal" id="menu_item<%= menu_item.id %>">
         <% if @customer_order_quantities[menu_item.name] != nil %>
-          <div class="quantity_num">
+          <div class="quantity_num" id="item_quantity<%= menu_item.id %>">
             <p> <%= @customer_order_quantities[menu_item.name] %> </p>
           </div>
         <% end %>
@@ -142,7 +142,7 @@
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.input :item_category, input_html: { value: 'dessert' }, as: :hidden %>
-                <%= f.submit "+", data: { order: @order.id, item: menu_item.id}, class: "plus"%>
+                <%= f.submit "+", class: "plus"%>
             <% end %>
           </div>
         </div>

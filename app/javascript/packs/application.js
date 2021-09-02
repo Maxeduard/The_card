@@ -24,13 +24,13 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import $ from 'jquery';
+global.$ = jQuery;
 
 // Internal imports, e.g:
-import { initCards } from '../plugins/init_cards.js';
+
+
 
 document.addEventListener('turbolinks:load', () => {
-  const RestaurantCards = document.querySelector('.cards')
-  if(RestaurantCards) {
-    initCards();
-  }
+
 });

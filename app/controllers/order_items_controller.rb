@@ -6,15 +6,17 @@ class OrderItemsController < ApplicationController
     @restaurant = @order.restaurant
     @order_item.order.user_id = current_user
     @present_order_item = @order.order_items.find_by(menu_item_id: order_item_params[:menu_item_id])
-    if @present_order_item
-      @present_order_item.quantity += 1
-      @present_order_item.save
-      # redirect_to restaurant_path(@order_item.order.restaurant )
-    else
-      if @order_item.save
-        # redirect_to restaurant_path(@order_item.order.restaurant)
+    respond_to do |format|
+      if @present_order_item
+        @present_order_item.quantity += 1
+        @present_order_item.save
+        format.js
       else
-        render 'restaurants/show'
+        if @order_item.save
+          format.js
+        else
+          render 'restaurants/show'
+        end
       end
     end
   end

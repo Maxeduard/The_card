@@ -36,13 +36,13 @@ class OrdersController < ApplicationController
     @total = @orders_paid.pluck(:total)
   end
 
-  def quantity_update
-    respond_to do |format|
-      format.json
-      raise
-    end
+  # def quantity_update
+  #   respond_to do |format|
+  #     format.json
+  #     raise
+  #   end
 
-  end
+  # end
 
   private
 
