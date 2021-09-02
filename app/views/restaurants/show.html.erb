@@ -7,7 +7,7 @@
     <% @drinks.each do |menu_item| %>
       <div class="meal" id="menu_item<%= menu_item.id %>">
         <% if @customer_order_quantities[menu_item.name] != nil %>
-          <div class="quantity_num">
+          <div class="quantity_num" id="item_quantity<%= menu_item.id %>">
             <p> <%= @customer_order_quantities[menu_item.name] %> </p>
           </div>
         <% end %>
@@ -27,7 +27,7 @@
             <p> <%= menu_item.description %></p>
           </div>
           <div class="quantity">
-            <%= simple_form_for([@order, @order_item]) do |f| %>
+            <%= simple_form_for([@order, @order_item], remote: true ) do |f| %>
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.input :item_category, input_html: { value: 'drinks' }, as: :hidden %>
@@ -44,7 +44,7 @@
     <% @appetizer.each do |menu_item| %>
       <div class="meal" id="menu_item<%= menu_item.id %>">
         <% if @customer_order_quantities[menu_item.name] != nil %>
-          <div class="quantity_num">
+          <div class="quantity_num" id="item_quantity<%= menu_item.id %>">
             <p> <%= @customer_order_quantities[menu_item.name] %> </p>
           </div>
         <% end %>
@@ -64,7 +64,7 @@
             <p> <%= menu_item.description %></p>
           </div>
           <div class="quantity">
-            <%= simple_form_for([@order, @order_item]) do |f| %>
+            <%= simple_form_for([@order, @order_item], remote: true) do |f| %>
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.input :item_category, input_html: { value: 'appetizer' }, as: :hidden %>
@@ -81,7 +81,7 @@
     <% @mains.each do |menu_item| %>
       <div class="meal" id="menu_item<%= menu_item.id %>">
         <% if @customer_order_quantities[menu_item.name] != nil %>
-          <div class="quantity_num">
+          <div class="quantity_num" id="item_quantity<%= menu_item.id %>">
             <p> <%= @customer_order_quantities[menu_item.name] %> </p>
           </div>
         <% end %>
@@ -101,7 +101,7 @@
             <p> <%= menu_item.description %></p>
           </div>
           <div class="quantity">
-            <%= simple_form_for([@order, @order_item]) do |f| %>
+            <%= simple_form_for([@order, @order_item], remote: true) do |f| %>
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.input :item_category, input_html: { value: 'mains' }, as: :hidden %>
@@ -118,7 +118,7 @@
     <% @dessert.each do |menu_item| %>
       <div class="meal" id="menu_item<%= menu_item.id %>">
         <% if @customer_order_quantities[menu_item.name] != nil %>
-          <div class="quantity_num">
+          <div class="quantity_num" id="item_quantity<%= menu_item.id %>">
             <p> <%= @customer_order_quantities[menu_item.name] %> </p>
           </div>
         <% end %>
@@ -138,7 +138,7 @@
             <p> <%= menu_item.description %></p>
           </div>
           <div class="quantity">
-            <%= simple_form_for([@order, @order_item]) do |f| %>
+            <%= simple_form_for([@order, @order_item], remote: true) do |f| %>
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.input :item_category, input_html: { value: 'dessert' }, as: :hidden %>
@@ -175,7 +175,7 @@
             <p> <%= menu_item.description %></p>
           </div>
           <div class="quantity">
-            <%= simple_form_for([@order, @order_item]) do |f| %>
+            <%= simple_form_for([@order, @order_item], remote: true) do |f| %>
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
                 <%= f.input :item_category, input_html: { value: 'dessert' }, as: :hidden %>

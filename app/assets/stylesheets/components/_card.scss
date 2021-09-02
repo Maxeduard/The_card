@@ -86,6 +86,12 @@
   padding: 0px;
 }
 
+.plus:active {
+  background-color: rgb(194, 249, 204);
+  transform: translateY(1px);
+  box-shadow: 0 1px rgb(64, 63, 63);
+}
+
 .quantity_num {
   background-color: red;
   color: rgb(248, 248, 248);
