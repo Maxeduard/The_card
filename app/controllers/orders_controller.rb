@@ -36,6 +36,17 @@ class OrdersController < ApplicationController
     @total = @orders_paid.pluck(:total)
   end
 
+  def stashed
+    @orders = Order.where(user: current_user, restaurant_id: session[:restaurant_id], created_at: Time.current.all_day)
+    @orders_paid = @orders.where(status: "paid")
+    @restaurant = Restaurant.find(session[:restaurant_id])
+    @orders_paid.each do |order|
+      order.status = "stashed"
+      order.save
+    end
+    redirect_to paid_path
+  end
+
   private
 
   def order_params

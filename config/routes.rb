@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   get 'paid', to: 'orders#paid', as: :paid
+  get 'stashed', to: 'orders#stashed', as: :stashed
 
   resources :order_items, only: [:destroy, :update]
-
 end
