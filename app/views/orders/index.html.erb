@@ -66,6 +66,16 @@
       </div>
     </div>
   </div>
+
+  <div class="time">
+    <% time = @total.sum * 0.2%>
+    <h6 >Your order takes:</h6>
+    <h6 id="minutes"> <strong><%= time.round() %></strong> minutes</h6>
+  </div>
+
+  <div class="checkbar" id="order_way">
+    <h4>Your order is on its way!</h4>
+  </div>
   <p class="invoice">Select a payment method</p>
   <div class="payment_method">
     <div>
@@ -90,5 +100,6 @@
     <p class="invoice"> No confirmed orders yet</p>
   </div>
 <% end %>
+
 
 <%= render 'shared/flying' if current_user %>

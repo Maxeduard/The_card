@@ -30,6 +30,7 @@
             <%= simple_form_for([@order, @order_item]) do |f| %>
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
+                <%= f.input :item_category, input_html: { value: 'drinks' }, as: :hidden %>
                 <%= f.submit "+", class: "plus"%>
             <% end %>
           </div>
@@ -66,6 +67,7 @@
             <%= simple_form_for([@order, @order_item]) do |f| %>
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
+                <%= f.input :item_category, input_html: { value: 'appetizer' }, as: :hidden %>
                 <%= f.submit "+", class: "plus"%>
             <% end %>
           </div>
@@ -102,6 +104,7 @@
             <%= simple_form_for([@order, @order_item]) do |f| %>
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
+                <%= f.input :item_category, input_html: { value: 'mains' }, as: :hidden %>
                 <%= f.submit "+", class: "plus"%>
             <% end %>
           </div>
@@ -138,6 +141,7 @@
             <%= simple_form_for([@order, @order_item]) do |f| %>
                 <%= f.input :quantity, input_html: {value: f.object.quantity || '1'}, as: :hidden %>
                 <%= f.input :menu_item_id, input_html: { value: menu_item.id }, as: :hidden %>
+                <%= f.input :item_category, input_html: { value: 'dessert' }, as: :hidden %>
                 <%= f.submit "+", class: "plus"%>
             <% end %>
           </div>
